@@ -1,0 +1,17 @@
+%YAML 1.2
+---
+
+name: Bash (Procfile)
+scope: source.procfile.shell
+file_extensions:
+  - Procfile
+  - Procfile.dev
+  - Procfile.test
+contexts:
+  main:
+    - match: '([^:]+)(:)'
+      captures:
+        1: entity.name.label.procfile
+        2: keyword.operator.procfile
+      embed: scope:source.shell
+      escape: '$'
